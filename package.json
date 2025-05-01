@@ -1,0 +1,26 @@
+{
+  "name": "@sporeball/dg",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "exports": null,
+  "bin": {
+    "dg": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sporeball/dg.git"
+  },
+  "author": "sporeball",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sporeball/dg/issues"
+  },
+  "homepage": "https://github.com/sporeball/dg#readme"
+}

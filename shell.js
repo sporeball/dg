@@ -7,6 +7,7 @@ import readline from 'readline';
 
 global.line = 1;
 global.v = '';
+global.hist = [];
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -15,6 +16,16 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', input => {
+  if (input.match(/^[1-9][0-9]*$/)) {
+    global.v = global.hist.at(Number(input) - 1);
+    log.out();
+    return;
+  }
+  if (input === 'up') {
+    global.v = global.hist.at(-2);
+    log.out();
+    return;
+  }
   const toks = input.split(' ');
   const tok = toks.at(0);
   const a = toks.slice(1);

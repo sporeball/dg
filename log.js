@@ -42,6 +42,7 @@ function pretty (v) {
 
 export default {
   out: function () {
+    global.hist.push(global.v);
     process.stdout.write(colors.gray(`${global.line} <= `));
     process.stdout.write(pretty(global.v));
     process.stdout.write('\n');

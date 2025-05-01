@@ -22,10 +22,11 @@ rl.on('line', input => {
   const c = cmd.list.get(tok);
   if (c === undefined) {
     log.err('no cmd');
+    global.v = null;
   } else {
-    global.v = c.call({ a, i });
-    log.out();
+    global.v = c.call({ v: global.v, a, i});
   }
+  log.out();
 });
 
 export default async function shell () {

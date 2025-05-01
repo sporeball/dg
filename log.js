@@ -1,4 +1,5 @@
 import colors from 'picocolors';
+import stripAnsi from 'strip-ansi';
 
 function pretty (v) {
   if (v === undefined) {
@@ -15,6 +16,9 @@ function pretty (v) {
     }
     return `[${str}]`;
   }
+  if (typeof v === 'object') {
+    return `{ ${Object.entries(v).map(x => `${x[0]}: ${pretty(x[1])}`).join(', ')} }`;
+  }
   if (typeof v === 'number') {
     return colors.cyan(v);
   }
@@ -22,7 +26,11 @@ function pretty (v) {
     if (v.length === 0) {
       return colors.gray("''");
     }
-    return colors.cyan(`'${v.replaceAll('\n', colors.yellow('\n'))}'`);
+    const single_line = v.replaceAll('\n', colors.yellow('\\n'));
+    if (stripAnsi(single_line).length > 100) {
+      return colors.cyan(`'${single_line.slice(0, 100)}${colors.gray('...')}'`);
+    }
+    return colors.cyan(`'${colors.cyan(single_line)}'`);
   }
   if (typeof v === 'boolean') {
     if (v === true) {
@@ -48,7 +56,5 @@ export default {
       process.stdout.write(e);
     }
     process.stdout.write('\n');
-    global.v = null;
-    this.out();
   }
 };

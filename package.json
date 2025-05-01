@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sporeball/dg#readme",
   "dependencies": {
-    "picocolors": "^1.1.1"
+    "picocolors": "^1.1.1",
+    "strip-ansi": "^7.1.0"
   }
 }

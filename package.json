@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/sporeball/dg/issues"
   },
-  "homepage": "https://github.com/sporeball/dg#readme"
+  "homepage": "https://github.com/sporeball/dg#readme",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  }
 }

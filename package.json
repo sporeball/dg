@@ -26,6 +26,7 @@
   "dependencies": {
     "clipboardy": "^4.0.0",
     "picocolors": "^1.1.1",
-    "strip-ansi": "^7.1.0"
+    "strip-ansi": "^7.1.0",
+    "sync-fetch": "^0.6.0-2"
   }
 }
